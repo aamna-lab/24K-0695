@@ -1,1 +1,1 @@
-it is wrong because in the printf statement , we need to add %lf instead of %d since it is a long integer
+it is wrong because in the printf statement,  IT SHOULD BE ("number is "%d"",testInteger);
