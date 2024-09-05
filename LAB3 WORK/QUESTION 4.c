@@ -8,7 +8,6 @@ int main()
    printf("Enter car's fuel average in kilometres per litre");
    scanf("%f", &c_avg);
    if c_avg<=0
-      {
    printf("Invalid car fuel average");
    else 
    L1=1207/c_avg;
@@ -16,7 +15,7 @@ int main()
    total_fuel=L1+L1;
    printf(" The total fuel was:  \n", total_fuel);
    printf(" The total cost for fuel was:  \n", fuel_cost);
-      }
+      
 }
 
 
