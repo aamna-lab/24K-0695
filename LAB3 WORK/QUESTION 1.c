@@ -2,5 +2,5 @@
 int main()
 {
   int testInteger=36000000;
-  printf("Number is "%d"",testInteger);
+  printf("Number is %d",testInteger);
 }
