@@ -1,1 +1,0 @@
-it is wrong because in the printf statement,  IT SHOULD BE ("number is "%d"",testInteger);
