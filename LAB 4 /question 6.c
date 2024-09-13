@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int amount,amount_d,discount,saved;
+    int amount,amount_d,saved;
     printf("Enter total cost of all items\n");
     scanf("%d", &amount);
     if (amount>=500){
