@@ -6,7 +6,8 @@ int main(){
     printf("Enter '1' if we are on vacation else enter '2'\n");
     scanf("%d", &v);
     if (w==2 || v==1){
-        printf("Sleep In!!");
+        printf("Sleep In!!\n");
+        printf("true");
         
     }else printf("Cannot Sleep In:(");
 }
