@@ -1,0 +1,6 @@
+the first if operator is not true hence we go to the second if operator
+but in the second if operator, we have a statement 1!= 2<5
+the greater or lesser than sign is taken first since it has the higher precedency compared to not equals to sign.
+Now since 2 is less than 5, it will take it as 1!=1, because the condition (2<5) is satisfied
+however 1 is equal to 1 , therefore the condition (1!=1) will be false and the else operator for this statement will be run.
+which in this case is 30. therefore the output is 30
