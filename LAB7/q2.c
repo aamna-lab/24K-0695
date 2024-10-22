@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdio.h> //question3 not present in manual so question 3 skipped//
 int main() {
    char arr[100];
    int a=0,e=0,i=0,o=0,u=0,index;
