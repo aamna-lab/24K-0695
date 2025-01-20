@@ -4,10 +4,12 @@ using namespace std;
 int main() {
     int x;
     int marks;
-    float total=0;
+    float total,avg;
+    
     cout << "Enter number of students" <<endl;
     cin >> x;
     for (int i=1;i<=x;i++){
+        total=0;
         for (int j=1;j<=3;j++){
             cout << "Enter marks for subject " << j << " for student " << i << endl;
             cin >> marks;
