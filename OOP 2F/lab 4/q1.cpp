@@ -50,6 +50,8 @@ int main() {
     Student object(240695, 18, 'A', "Aamna");
     object.displayDetails();
     object.isEligibleForScholarship();
-
+    cout << endl;
+    Student object1(240456, 19,  'C' ,"Haniya");
+    object1.displayDetails();
+    object1.isEligibleForScholarship();
 }
-
