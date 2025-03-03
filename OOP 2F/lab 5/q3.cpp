@@ -1,3 +1,5 @@
+/*We make the isValid() function constant because it will not chnage anything inside, it will just read it.*/
+
 #include <iostream>
 #include <string>
 using namespace std;
