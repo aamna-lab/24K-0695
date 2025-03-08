@@ -63,5 +63,10 @@ public:
     }
 };
 int main(){
-  
+  Engine e("Engine");
+  Wheel w("Wheels");
+  Headlight h("High");
+  Steering s("Example");
+  Car c(&e, &w, h , s);  
+    c.displayDetails();
 }
