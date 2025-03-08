@@ -64,9 +64,9 @@ public:
 };
 int main(){
   Engine e("Engine");
-  Wheel w("Wheels");
+  Wheel w(3);
   Headlight h("High");
   Steering s("Example");
-  Car c(&e, &w, h , s);  
+  Car c(&e, &w, h.getBrightness() , s.getType());  
     c.displayDetails();
 }
