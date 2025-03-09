@@ -34,7 +34,6 @@ class Message{
     setString(idk);
     return idk;
     }
-    virtual ~Message(){}
 };
 
 class SMS:public Message{
