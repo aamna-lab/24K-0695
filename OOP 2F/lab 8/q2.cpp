@@ -33,5 +33,6 @@ int main() {
     Account acc2("24K-0644", "Laiba Khan", 40000);
     cout << acc1 << endl;
     cout << acc2 << endl;
+    cout << acc1 + acc2 << endl;
     return 0;
 }
