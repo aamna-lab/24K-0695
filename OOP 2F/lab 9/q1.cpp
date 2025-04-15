@@ -39,9 +39,12 @@ class Bike : public Vehicle{
 int main() {
    Car c("Toyota 345", 8.45);
    Bike b("Hyundai 234" , 7.45);
-   c.displayDetails();
-   b.displayDetails();
-   cout << "Daily Rates of car : " << c.getDailyRate() << endl;
-    cout << "Daily Rates of bike : " << b.getDailyRate() << endl;
+   
+   Vehicle *v1 = &c;
+   Vehicle *v2 = &b;
+   v1->displayDetails();
+   v2->displayDetails();
+   cout << "Daily Rates of car : " << v1->getDailyRate() << endl;
+    cout << "Daily Rates of bike : " << v2->getDailyRate() << endl;
   
 }
