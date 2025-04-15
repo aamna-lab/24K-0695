@@ -3,21 +3,18 @@
 #include <iostream>
 using namespace std;
 
-Library::Library(int count) : bookCount(count) {
-            books = new Book*[bookCount];
+Library::Library(int max) : maxBooks(max), bookCount(0) {
+            books = new Book*[maxBooks];
         }
 
-void Library::addBook() {
-    string title, author, isbn;
-    cout << "Enter book title: ";
-    cin >> title;
-    cout << "Enter book author: ";
-    cin >> author;
-    cout << "Enter book ISBN: ";
-    cin >> isbn;
-
-    books[bookCount] = new Book(title, author, isbn);
-    bookCount++;
+void Library::addBook(const Book& book) {
+   if (bookCount < maxBooks) {
+        books[bookCount] = book;
+        bookCount++;
+        cout << "Book added successfully!" << endl;
+    }
+    else {
+        cout << "Cannot add book. Library is full!" << endl;
 }
 
 void Library::removeBook() {
@@ -43,8 +40,8 @@ void Library::searchBook() {
     cin >> title;
 
     for (int i = 0; i < bookCount; i++) {
-        if (books[i]->getTtile() == title) {
-            cout << "Book found: " << books[i]->getTtile() << ", " << books[i]->getAuthor() << ", " << books[i]->getISBN() << endl;
+        if (books[i]->getTitle() == title) {
+            cout << "Book found: " << books[i]->getTitle() << ", " << books[i]->getAuthor() << ", " << books[i]->getISBN() << endl;
             return;
         }
     }
