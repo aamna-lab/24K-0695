@@ -23,7 +23,7 @@ class LightBulb : public SmartDevice{
     void turnOff() override{
         isOn=false;
         cout << "LightBulb has turned off\n";
-        cout << "Brightness is : " << brightness << endl;
+     
     }
     bool getStatus() override{
         return isOn;
@@ -44,7 +44,7 @@ class Thermostat : public SmartDevice{
     void turnOff() override{
         isOn=false;
         cout << "Thermostat has turned off\n";
-        cout << "Temperature is : " << temperature << endl;
+       
     }
     bool getStatus() override{
         return isOn;
