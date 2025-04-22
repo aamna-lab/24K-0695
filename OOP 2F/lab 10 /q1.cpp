@@ -62,3 +62,120 @@ int main(){
     }
     readFile.close();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//approach 2 searching from start end and middle of the file 
+
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+
+struct Student {
+    string id;
+    string name;
+    float gpa;
+};
+
+int main() {
+    Student students[5];
+
+    ofstream studentsFile("students.txt", ios::out);
+    if (!studentsFile) return 1;
+
+    for (int i = 0; i < 5; i++) {
+        cout << "\nEnter details for student " << (i + 1) << endl;
+
+        cout << "ID: ";
+        getline(cin, students[i].id);
+
+        cout << "Name: ";
+        getline(cin, students[i].name);
+
+        cout << "GPA: ";
+        while (!(cin >> students[i].gpa)) {
+            cout << "Invalid GPA. Enter a number: ";
+            cin.clear();
+            cin.ignore(10000, '\n');
+        }
+        cin.ignore();
+
+        studentsFile << students[i].id << " " << students[i].name << " " << students[i].gpa << endl;
+    }
+    studentsFile.close();
+
+    Student newStudent;
+    cout << "\nEnter details for the additional student" << endl;
+
+    cout << "ID: ";
+    getline(cin, newStudent.id);
+
+    cout << "Name: ";
+    getline(cin, newStudent.name);
+
+    cout << "GPA: ";
+    while (!(cin >> newStudent.gpa)) {
+        cout << "Invalid GPA. Enter a number: ";
+        cin.clear();
+        cin.ignore(10000, '\n');
+    }
+    cin.ignore();
+
+    studentsFile.open("students.txt", ios::app);
+    if (!studentsFile) return 1;
+    studentsFile << newStudent.id << " " << newStudent.name << " " << newStudent.gpa << endl;
+    studentsFile.close();
+
+    ifstream readFile("students.txt");
+    if (!readFile) return 1;
+
+    int count = 0;
+    string line;
+    while (getline(readFile, line)) {
+        count++;
+    }
+    readFile.close();
+
+    if (count == 0) return 0;
+
+    int firstIndex = 0;
+    int midIndex = count / 2;
+    int lastIndex = count - 1;
+
+    readFile.open("students.txt");
+    Student temp;
+    int currentLine = 0;
+
+    cout << "\nReading specific students:\n";
+
+    while (readFile >> temp.id >> temp.name >> temp.gpa) {
+        if (currentLine == firstIndex) {
+            cout << "\nFrom Start:\nID: " << temp.id << "\tName: " << temp.name << "\tGPA: " << temp.gpa << endl;
+        }
+        if (currentLine == midIndex) {
+            cout << "\nFrom Middle:\nID: " << temp.id << "\tName: " << temp.name << "\tGPA: " << temp.gpa << endl;
+        }
+        if (currentLine == lastIndex) {
+            cout << "\nFrom End:\nID: " << temp.id << "\tName: " << temp.name << "\tGPA: " << temp.gpa << endl;
+        }
+        currentLine++;
+    }
+
+    readFile.close();
+    return 0;
+}
