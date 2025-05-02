@@ -38,7 +38,7 @@ int main() {
 
     try {
         string s = "hello";
-        throw InvalidTypeException(); // mimic invalid template instantiation
+        throw InvalidTypeException(); 
     } catch (exception& e) {
         cout << "sqrt(\"hello\"): " << e.what() << endl;
     }
